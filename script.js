@@ -2,36 +2,39 @@
    CHATBOT
 ========================= */
 
-function sendMessage() {
+function addChatMessage(messages, author, message) {
+    const paragraph = document.createElement("p");
+    const strong = document.createElement("strong");
 
+    strong.textContent = `${author}:`;
+    paragraph.appendChild(strong);
+    paragraph.appendChild(document.createTextNode(` ${message}`));
+
+    messages.appendChild(paragraph);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
     const input = document.getElementById("chat-input");
     const messages = document.getElementById("chat-messages");
 
-    const userMessage = input.value.trim();
-
-    if (userMessage === "") {
+    if (!input || !messages) {
         return;
     }
 
-    messages.innerHTML += `
-        <p>
-            <strong>You:</strong>
-            ${userMessage}
-        </p>
-    `;
+    const userMessage = input.value.trim();
+
+    if (!userMessage) {
+        return;
+    }
+
+    addChatMessage(messages, "You", userMessage);
 
     const response = getBotResponse(userMessage);
-
-    messages.innerHTML += `
-        <p>
-            <strong>Bot:</strong>
-            ${response}
-        </p>
-    `;
+    addChatMessage(messages, "Bot", response);
 
     input.value = "";
-
-    messages.scrollTop = messages.scrollHeight;
+    input.focus();
 }
 
 
@@ -39,105 +42,65 @@ function sendMessage() {
    CHATBOT RESPONSES
 ========================= */
 
+function containsWord(message, words) {
+    return words.some((word) => {
+        const pattern = new RegExp(`\\b${word}\\b`, "i");
+        return pattern.test(message);
+    });
+}
+
 function getBotResponse(message) {
+    const normalizedMessage = String(message).trim().toLowerCase();
 
-    message = message.toLowerCase();
-
-
-    if (
-        message.includes("hello") ||
-        message.includes("hi") ||
-        message.includes("hey")
-    ) {
-
+    if (containsWord(normalizedMessage, ["hello", "hi", "hey"])) {
         return "Hello! 👋 Thanks for visiting my portfolio. How can I help you?";
-
     }
 
-
     if (
-        message.includes("skill") ||
-        message.includes("technology") ||
-        message.includes("technologies")
+        containsWord(normalizedMessage, ["skill", "skills", "technology", "technologies"])
     ) {
-
         return "My skills include HTML, CSS, JavaScript, Python, Java, Git, GitHub, PowerShell, Microsoft Entra ID, and Microsoft Graph API.";
-
     }
 
-
-    if (
-        message.includes("project") ||
-        message.includes("projects")
-    ) {
-
+    if (containsWord(normalizedMessage, ["project", "projects"])) {
         return "I have worked on security analysis, security evaluation, and Microsoft Entra ID projects. You can view them in the Projects section.";
-
     }
 
-
     if (
-        message.includes("education") ||
-        message.includes("school") ||
-        message.includes("college") ||
-        message.includes("degree")
+        containsWord(normalizedMessage, ["education", "school", "college", "degree"])
     ) {
-
         return "I am studying Computer Technology at Bowie State University, with a focus on Internet Technologies and Web Services. My expected graduation is Fall 2026.";
-
     }
 
-
     if (
-        message.includes("experience") ||
-        message.includes("work")
+        containsWord(normalizedMessage, ["experience", "work"])
     ) {
-
         return "My experience includes security implementation, identity and access management, security reporting, documentation, Microsoft Entra ID, Microsoft Graph API, and PowerShell.";
-
     }
 
-
     if (
-        message.includes("github") ||
-        message.includes("code")
+        containsWord(normalizedMessage, ["github", "code"])
     ) {
-
         return "You can find my project documentation and source code through the GitHub links in the Projects section.";
-
     }
 
-
     if (
-        message.includes("resume") ||
-        message.includes("cv")
+        containsWord(normalizedMessage, ["resume", "cv"])
     ) {
-
         return "You can view or download my resume in the Resume section.";
-
     }
-
 
     if (
-        message.includes("contact") ||
-        message.includes("email") ||
-        message.includes("reach")
+        containsWord(normalizedMessage, ["contact", "email", "reach"])
     ) {
-
         return "You can contact me using the contact form in the Contact section.";
-
     }
 
-
-    if (message.includes("golf")) {
-
+    if (containsWord(normalizedMessage, ["golf"])) {
         return "Golf is one of my interests outside of technology! ⛳";
-
     }
-
 
     return "I'm not sure about that yet. Try asking me about my skills, projects, education, experience, GitHub, resume, or contact information.";
-
 }
 
 
@@ -146,94 +109,63 @@ function getBotResponse(message) {
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
     /* CHATBOT */
+    const chatButton = document.getElementById("chat-send");
+    const chatInput = document.getElementById("chat-input");
+    const chatForm = document.getElementById("chat-form");
 
-    const chatButton =
-        document.getElementById("chat-send");
-
-    const chatInput =
-        document.getElementById("chat-input");
-
-
-    if (chatButton) {
-
-        chatButton.addEventListener(
-            "click",
-            sendMessage
-        );
-
+    if (chatForm) {
+        chatForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            sendMessage();
+        });
     }
 
+    if (chatButton && !chatForm) {
+        chatButton.addEventListener("click", sendMessage);
+    }
 
-    if (chatInput) {
-
-        chatInput.addEventListener(
-            "keypress",
-            function (event) {
-
-                if (event.key === "Enter") {
-
-                    event.preventDefault();
-
-                    sendMessage();
-
-                }
-
+    if (chatInput && !chatForm) {
+        chatInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendMessage();
             }
-        );
-
+        });
     }
-
 
     /* QR CODE */
+    const qrContainer = document.getElementById("qrcode");
 
-    const qrContainer =
-        document.getElementById("qrcode");
-
-
-    if (
-        qrContainer &&
-        typeof QRCode !== "undefined"
-    ) {
-
-        new QRCode(qrContainer, {
-
-            text: "https://tiarraw96-code.github.io/personal-portfolio/",
-
-            width: 180,
-
-            height: 180
-
-        });
-
+    if (qrContainer) {
+        if (typeof QRCode === "undefined") {
+            qrContainer.textContent = "QR code unavailable.";
+        } else {
+            qrContainer.replaceChildren();
+            new QRCode(qrContainer, {
+                text: "https://tiarraw96-code.github.io/personal-portfolio/",
+                width: 180,
+                height: 180
+            });
+        }
     }
-
 
     /* CONTACT FORM */
-
-    const contactForm =
-        document.getElementById("contact-form");
-
+    const contactForm = document.getElementById("contact-form");
+    const formStatus = document.getElementById("form-status");
 
     if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-                alert(
-                    "Thank you for your message! I received your message."
-                );
-
-                contactForm.reset();
-
+            if (formStatus) {
+                formStatus.textContent = "Thank you for your message! I received your message.";
+                formStatus.style.display = "block";
+            } else {
+                alert("Thank you for your message! I received your message.");
             }
-        );
 
+            contactForm.reset();
+        });
     }
-
 });
