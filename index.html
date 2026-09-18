@@ -5,23 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tiarra Williams | Portfolio</title>
+    <title>Tiarra Williams | Computer Technology Portfolio</title>
+
+    <meta
+        name="description"
+        content="Portfolio of Tiarra Williams, a Computer Technology student focused on web development, cybersecurity, identity management, and useful digital experiences."
+    >
+
+    <meta name="author" content="Tiarra Williams">
+    <meta name="theme-color" content="#111827">
+
+    <!-- Open Graph metadata -->
+    <meta property="og:title" content="Tiarra Williams | Computer Technology Portfolio">
+    <meta
+        property="og:description"
+        content="Explore Tiarra Williams' projects, skills, education, and experience in technology, cybersecurity, and web development."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tiarraw96-code.github.io/personal-portfolio/">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Keyboard accessibility -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
     <!-- NAVIGATION -->
     <header class="navbar">
-
         <div class="nav-container">
 
-            <a href="#home" class="logo">
-                TW<span>.</span>
+            <a href="#home" class="logo" aria-label="Tiarra Williams home">
+                TW<span aria-hidden="true">.</span>
             </a>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Primary navigation">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
@@ -35,541 +56,553 @@
             </a>
 
         </div>
-
     </header>
 
+    <main id="main-content">
 
-    <!-- HOME -->
-    <section id="home" class="hero">
+        <!-- HOME -->
+        <section id="home" class="hero" aria-labelledby="hero-heading">
 
-        <div class="hero-content">
+            <div class="hero-content">
 
-            <div class="status-badge">
-                <span class="status-dot"></span>
-                Computer Technology Student
-            </div>
+                <div class="status-badge" role="status">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Computer Technology Student
+                </div>
 
-            <h1>
-                Hi, I'm <span>Tiarra Williams.</span>
-            </h1>
+                <h1 id="hero-heading">
+                    Hi, I'm <span>Tiarra Williams.</span>
+                </h1>
 
-            <h2>
-                I build technology with purpose.
-            </h2>
-
-            <p>
-                I'm a Computer Technology student at Bowie State University
-                focused on Internet Technologies, Web Services, security,
-                and creating useful digital experiences.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="primary-button">
-                    View My Projects →
-                </a>
-
-                <a href="#contact" class="secondary-button">
-                    Contact Me
-                </a>
-
-            </div>
-
-            <div class="hero-info">
-                <span>📍 Maryland</span>
-                <span>🎓 Bowie State University</span>
-                <span>💻 Expected Fall 2026</span>
-            </div>
-
-        </div>
-
-
-        <div class="hero-card">
-
-            <div class="card-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <div class="profile-icon">
-                TW
-            </div>
-
-            <h3>
-                TIARRA WILLIAMS
-            </h3>
-
-            <p>
-                Technology • Security • Web
-            </p>
-
-            <div class="mini-skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>Java</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                01 — ABOUT ME
-            </p>
-
-            <h2>
-                A little about me.
-            </h2>
-
-            <p>
-                Learn more about my background, education, and technical interests.
-            </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-            <div class="about-text">
+                <h2>
+                    I build technology with purpose.
+                </h2>
 
                 <p>
-                    I am a Computer Technology student interested in
-                    platform technologies, web development, data analysis,
-                    and cybersecurity.
+                    I'm a Computer Technology student at Bowie State University
+                    focused on Internet Technologies, Web Services, security,
+                    and creating useful digital experiences.
                 </p>
 
-                <p>
-                    Through academic and professional projects, I have worked
-                    with identity and access management, Microsoft Entra ID,
-                    security analysis, documentation, and automation.
-                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="primary-button">
+                        View My Projects
+                        <span aria-hidden="true">→</span>
+                    </a>
 
-                <p>
-                    I enjoy learning new technologies and creating solutions
-                    that are useful, organized, and easy to understand.
-                </p>
+                    <a href="#contact" class="secondary-button">
+                        Contact Me
+                    </a>
+                </div>
 
-            </div>
-
-
-            <div class="education-card">
-
-                <p class="card-label">
-                    EDUCATION
-                </p>
-
-                <h3>
-                    Bowie State University
-                </h3>
-
-                <p>
-                    Computer Technology
-                </p>
-
-                <p>
-                    Internet Technologies and Web Services Track
-                </p>
-
-                <div class="graduation">
-
-                    <span>
-                        Expected Graduation
-                    </span>
-
-                    <strong>
-                        Fall 2026
-                    </strong>
-
+                <div class="hero-info" aria-label="Personal information">
+                    <span>📍 Maryland</span>
+                    <span>🎓 Bowie State University</span>
+                    <span>💻 Expected Fall 2026</span>
                 </div>
 
             </div>
 
-        </div>
+            <div class="hero-card" aria-label="Tiarra Williams profile card">
 
-
-        <div class="skills-section">
-
-            <h3>
-                Technologies & Skills
-            </h3>
-
-            <div class="skills">
-
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>Java</span>
-                <span>Git</span>
-                <span>GitHub</span>
-                <span>PowerShell</span>
-                <span>Microsoft Entra ID</span>
-                <span>Microsoft Graph API</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section projects-section">
-
-        <div class="section-heading">
-
-            <p class="section-label">
-                02 — PROJECTS
-            </p>
-
-            <h2>
-                Things I've worked on.
-            </h2>
-
-            <p>
-                A few examples of my technical and security-focused work.
-            </p>
-
-        </div>
-
-
-        <div class="project-grid">
-
-
-            <article class="project-card">
-
-                <div class="project-number">
-                    01
+                <div class="card-dots" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
 
-                <div class="project-icon">
-                    🔐
+                <div class="profile-icon" aria-hidden="true">
+                    TW
                 </div>
 
                 <h3>
-                    Security Analysis
+                    TIARRA WILLIAMS
                 </h3>
 
                 <p>
-                    Assisted with security implementation projects by evaluating
-                    SSO, RBAC, encryption requirements, and creating technical
-                    documentation, runbooks, dashboards, and presentations
-                    for stakeholders.
+                    Technology • Security • Web
                 </p>
 
-                <div class="project-tags">
-                    <span>Security</span>
-                    <span>IAM</span>
-                    <span>Documentation</span>
+                <div class="mini-skills" aria-label="Featured skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Java</span>
                 </div>
 
-                <a href="https://github.com/tiarraw96-code/security-analysis"
-                   class="project-button"
-                   target="_blank">
-                    View Project →
-                </a>
+            </div>
 
-            </article>
+        </section>
 
+        <!-- ABOUT -->
+        <section id="about" class="section" aria-labelledby="about-heading">
 
-            <article class="project-card">
+            <div class="section-heading">
+                <p class="section-label">
+                    01 — ABOUT ME
+                </p>
 
-                <div class="project-number">
-                    02
+                <h2 id="about-heading">
+                    A little about me.
+                </h2>
+
+                <p>
+                    Learn more about my background, education, and technical interests.
+                </p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+                    <p>
+                        I am a Computer Technology student interested in
+                        platform technologies, web development, data analysis,
+                        and cybersecurity.
+                    </p>
+
+                    <p>
+                        Through academic and professional projects, I have worked
+                        with identity and access management, Microsoft Entra ID,
+                        security analysis, documentation, and automation.
+                    </p>
+
+                    <p>
+                        I enjoy learning new technologies and creating solutions
+                        that are useful, organized, and easy to understand.
+                    </p>
                 </div>
 
-                <div class="project-icon">
-                    📊
+                <div class="education-card">
+                    <p class="card-label">
+                        EDUCATION
+                    </p>
+
+                    <h3>
+                        Bowie State University
+                    </h3>
+
+                    <p>
+                        Computer Technology
+                    </p>
+
+                    <p>
+                        Internet Technologies and Web Services Track
+                    </p>
+
+                    <div class="graduation">
+                        <span>
+                            Expected Graduation
+                        </span>
+
+                        <strong>
+                            Fall 2026
+                        </strong>
+                    </div>
                 </div>
 
+            </div>
+
+            <div class="skills-section">
                 <h3>
-                    Security Evaluation
+                    Technologies &amp; Skills
                 </h3>
 
-                <p>
-                    Developed security reporting and documentation by analyzing
-                    identity data, MFA/SSPR adoption, sign-in logs, and access
-                    information to support IAM, compliance, and enterprise
-                    security initiatives.
-                </p>
-
-                <div class="project-tags">
-                    <span>Data</span>
-                    <span>MFA</span>
-                    <span>IAM</span>
-                </div>
-
-                <a href="https://github.com/tiarraw96-code/security-analysis"
-                   class="project-button"
-                   target="_blank">
-                    View Project →
-                </a>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <div class="project-number">
-                    03
-                </div>
-
-                <div class="project-icon">
-                    ☁️
-                </div>
-
-                <h3>
-                    Microsoft Entra
-                </h3>
-
-                <p>
-                    Conducted Microsoft Entra ID security audits using
-                    Microsoft Graph API and PowerShell to inventory application
-                    registrations, analyze service principals, identify expired
-                    credentials, and support identity governance reviews.
-                </p>
-
-                <div class="project-tags">
-                    <span>Entra ID</span>
+                <div class="skills" aria-label="Technical skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Java</span>
+                    <span>Git</span>
+                    <span>GitHub</span>
                     <span>PowerShell</span>
-                    <span>Graph API</span>
+                    <span>Microsoft Entra ID</span>
+                    <span>Microsoft Graph API</span>
                 </div>
-
-                <a href="https://github.com/tiarraw96-code/security-analysis"
-                   class="project-button"
-                   target="_blank">
-                    View Project →
-                </a>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- RESUME -->
-    <section id="resume" class="resume-section">
-
-        <div class="resume-content">
-
-            <p class="section-label">
-                03 — RESUME
-            </p>
-
-            <h2>
-                Want to know more?
-            </h2>
-
-            <p>
-                Take a look at my resume for more information about my
-                education, experience, skills, and projects.
-            </p>
-
-            <div class="resume-buttons">
-
-                <a href="resume.pdf"
-                   target="_blank"
-                   class="primary-button">
-                    View Resume
-                </a>
-
-                <a href="resume.pdf"
-                   download
-                   class="secondary-button">
-                    Download Resume ↓
-                </a>
-
             </div>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- PROJECTS -->
+        <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
 
+            <div class="section-heading">
+                <p class="section-label">
+                    02 — PROJECTS
+                </p>
 
-    <!-- QR CODE -->
-    <section id="qr" class="section qr-section">
+                <h2 id="projects-heading">
+                    Things I've worked on.
+                </h2>
 
-        <div class="section-heading">
+                <p>
+                    A few examples of my technical and security-focused work.
+                </p>
+            </div>
 
-            <p class="section-label">
-                04 — SHARE
-            </p>
+            <div class="project-grid">
 
-            <h2>
-                Scan my portfolio.
-            </h2>
+                <article class="project-card">
+                    <div class="project-number" aria-hidden="true">
+                        01
+                    </div>
 
-            <p>
-                Scan the QR code below to visit my portfolio.
-            </p>
+                    <div class="project-icon" aria-hidden="true">
+                        🔐
+                    </div>
 
-        </div>
+                    <h3>
+                        Security Analysis
+                    </h3>
 
-        <div id="qrcode"></div>
+                    <p>
+                        Assisted with security implementation projects by evaluating
+                        SSO, RBAC, encryption requirements, and creating technical
+                        documentation, runbooks, dashboards, and presentations
+                        for stakeholders.
+                    </p>
 
-    </section>
+                    <div class="project-tags" aria-label="Project technologies">
+                        <span>Security</span>
+                        <span>IAM</span>
+                        <span>Documentation</span>
+                    </div>
 
+                    <a
+                        href="https://github.com/tiarraw96-code/security-analysis"
+                        class="project-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View Security Analysis project on GitHub"
+                    >
+                        View Project
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
+                <article class="project-card">
+                    <div class="project-number" aria-hidden="true">
+                        02
+                    </div>
 
-        <div class="section-heading">
+                    <div class="project-icon" aria-hidden="true">
+                        📊
+                    </div>
 
-            <p class="section-label">
-                05 — CONTACT
-            </p>
+                    <h3>
+                        Security Evaluation
+                    </h3>
 
-            <h2>
-                Let's connect.
-            </h2>
+                    <p>
+                        Developed security reporting and documentation by analyzing
+                        identity data, MFA/SSPR adoption, sign-in logs, and access
+                        information to support IAM, compliance, and enterprise
+                        security initiatives.
+                    </p>
 
-            <p>
-                Have a question, opportunity, or just want to say hello?
-                Send me a message.
-            </p>
+                    <div class="project-tags" aria-label="Project technologies">
+                        <span>Data</span>
+                        <span>MFA</span>
+                        <span>IAM</span>
+                    </div>
 
-        </div>
+                    <a
+                        href="https://github.com/tiarraw96-code/security-evaluation"
+                        class="project-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View Security Evaluation project on GitHub"
+                    >
+                        View Project
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
 
+                <article class="project-card">
+                    <div class="project-number" aria-hidden="true">
+                        03
+                    </div>
 
-        <form id="contact-form">
+                    <div class="project-icon" aria-hidden="true">
+                        ☁️
+                    </div>
 
-            <div class="form-row">
+                    <h3>
+                        Microsoft Entra
+                    </h3>
+
+                    <p>
+                        Conducted Microsoft Entra ID security audits using
+                        Microsoft Graph API and PowerShell to inventory application
+                        registrations, analyze service principals, identify expired
+                        credentials, and support identity governance reviews.
+                    </p>
+
+                    <div class="project-tags" aria-label="Project technologies">
+                        <span>Entra ID</span>
+                        <span>PowerShell</span>
+                        <span>Graph API</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/tiarraw96-code/microsoft-entra-security-audit"
+                        class="project-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View Microsoft Entra security audit project on GitHub"
+                    >
+                        View Project
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- RESUME -->
+        <section id="resume" class="resume-section" aria-labelledby="resume-heading">
+
+            <div class="resume-content">
+                <p class="section-label">
+                    03 — RESUME
+                </p>
+
+                <h2 id="resume-heading">
+                    Want to know more?
+                </h2>
+
+                <p>
+                    Take a look at my resume for more information about my
+                    education, experience, skills, and projects.
+                </p>
+
+                <div class="resume-buttons">
+                    <a
+                        href="resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="primary-button"
+                    >
+                        View Resume
+                    </a>
+
+                    <a
+                        href="resume.pdf"
+                        download
+                        class="secondary-button"
+                    >
+                        Download Resume
+                        <span aria-hidden="true">↓</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- QR CODE -->
+        <section id="qr" class="section qr-section" aria-labelledby="qr-heading">
+
+            <div class="section-heading">
+                <p class="section-label">
+                    04 — SHARE
+                </p>
+
+                <h2 id="qr-heading">
+                    Scan my portfolio.
+                </h2>
+
+                <p>
+                    Scan the QR code below to visit my portfolio.
+                </p>
+            </div>
+
+            <div
+                id="qrcode"
+                role="img"
+                aria-label="QR code for Tiarra Williams' portfolio"
+            ></div>
+
+            <noscript>
+                <p>
+                    JavaScript is required to display the QR code.
+                    You can visit the portfolio directly using this page's URL.
+                </p>
+            </noscript>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+
+            <div class="section-heading">
+                <p class="section-label">
+                    05 — CONTACT
+                </p>
+
+                <h2 id="contact-heading">
+                    Let's connect.
+                </h2>
+
+                <p>
+                    Have a question, opportunity, or just want to say hello?
+                    Send me a message.
+                </p>
+            </div>
+
+            <form id="contact-form" method="post">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                </div>
 
                 <div class="form-group">
-
-                    <label for="name">
-                        Name
+                    <label for="message">
+                        Message
                     </label>
 
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Your name"
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message..."
+                        rows="6"
                         required
-                    >
-
+                    ></textarea>
                 </div>
 
+                <button type="submit" class="primary-button">
+                    Send Message
+                    <span aria-hidden="true">→</span>
+                </button>
 
-                <div class="form-group">
+                <p
+                    id="form-status"
+                    class="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></p>
 
-                    <label for="email">
-                        Email
-                    </label>
+            </form>
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="you@example.com"
-                        required
-                    >
+        </section>
 
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="message">
-                    Message
-                </label>
-
-                <textarea
-                    id="message"
-                    placeholder="Write your message..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <button type="submit" class="primary-button">
-                Send Message →
-            </button>
-
-        </form>
-
-    </section>
-
+    </main>
 
     <!-- CHATBOT -->
-    <div id="chatbot">
-
+    <aside
+        id="chatbot"
+        aria-label="Portfolio assistant"
+    >
         <div id="chat-header">
-
             <div>
-                <span class="chat-status"></span>
+                <span class="chat-status" aria-hidden="true"></span>
                 Portfolio Assistant
             </div>
-
         </div>
 
-
-        <div id="chat-messages">
-
+        <div
+            id="chat-messages"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions"
+        >
             <p>
                 <strong>Bot:</strong>
                 Hi! 👋 Ask me about Tiarra's skills,
                 projects, education, experience,
                 resume, or contact information.
             </p>
-
         </div>
 
-
         <div id="chat-input-area">
+            <label for="chat-input" class="sr-only">
+                Ask the portfolio assistant a question
+            </label>
 
             <input
                 type="text"
                 id="chat-input"
+                name="chat-input"
                 placeholder="Ask me something..."
+                autocomplete="off"
             >
 
-            <button id="chat-send">
-                →
+            <button
+                type="button"
+                id="chat-send"
+                aria-label="Send message"
+            >
+                <span aria-hidden="true">→</span>
             </button>
-
         </div>
-
-    </div>
-
+    </aside>
 
     <!-- FOOTER -->
     <footer>
-
-        <div class="footer-logo">
-            TW<span>.</span>
+        <div class="footer-logo" aria-label="TW">
+            TW<span aria-hidden="true">.</span>
         </div>
 
         <p>
             © 2026 Tiarra Williams.
-            Built with HTML, CSS & JavaScript.
+            Built with HTML, CSS &amp; JavaScript.
         </p>
 
-        <a href="#home">
-            Back to top ↑
-        </a>
+        <div class="footer-links">
+            <a
+                href="https://github.com/tiarraw96-code"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
 
+            <a href="#home">
+                Back to top
+                <span aria-hidden="true">↑</span>
+            </a>
+        </div>
     </footer>
 
+    <!-- QR code library must load before the custom script -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        defer
+    ></script>
 
-    <!-- QR CODE LIBRARY MUST COME FIRST -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-    <!-- YOUR JAVASCRIPT -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
 </body>
 
 </html>
+
